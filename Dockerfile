@@ -20,6 +20,8 @@ RUN /opt/gosu/gosu.install.sh && rm -fr /opt/gosu
 # use custom entrypoint to always use hosts user UID and GID
 COPY entrypoint.sh /usr/local/bin/entrypoint.sh
 
+RUN chmod +x /usr/local/bin/entrypoint.sh
+
 # set default home directory for root
 ENV HOME /home/terraform
 

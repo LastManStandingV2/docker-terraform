@@ -1,6 +1,6 @@
 .SILENT:
-TERRAFORM_VERSION = 0.14.6
-IMAGE_NAME ?= contino/terraform:$(TERRAFORM_VERSION)
+TERRAFORM_VERSION = 0.15.0
+IMAGE_NAME ?= paulrmortimer/docker-terraform:$(TERRAFORM_VERSION)
 TAG = $(TERRAFORM_VERSION)
 
 .PHONY: build

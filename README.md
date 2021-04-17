@@ -1,5 +1,5 @@
 # Docker Terraform
-Containerised Terraform CLI with Python3, GCP, AWS sdks and GOSU installed.
+Containerised Terraform CLI with Python3, GCP, AWS SDKs and GOSU installed.
 
 ## Usage
 The below 2 examples are using the `terraform` user inside the container.
@@ -9,7 +9,7 @@ This is explained below in [Configuration](#configuration).
 Run as a command:
 
 ```bash
-docker run --rm -v ~/.aws:/home/terraform/.aws -v $(pwd):/opt/app contino/terraform --version
+docker run --rm -v ~/.aws:/home/terraform/.aws -v $(pwd):/opt/app paulrmortimer/docker-terraform --version
 ```
 
 ### Docker-Compose
@@ -17,7 +17,7 @@ Using docker-compose:
 
 ```yaml
 terraform:
-  image: contino/terraform
+  image: paulrmortimer/docker-terraform
   env_file: .env
   volumes:
     - ~/.aws:/home/terraform/.aws
@@ -32,7 +32,7 @@ for quick access, with correct mounting points:
 
 ```bash
 function terraform() {
-  docker run --rm -it -v ~/.aws:/home/terraform/.aws -v $(pwd):/opt/app contino/terraform "$@";
+  docker run --rm -it -v ~/.aws:/home/terraform/.aws -v $(pwd):/opt/app paulrmortimer/docker-terraform "$@";
 }
 ```
 
@@ -66,6 +66,8 @@ make build
 ```
 
 Docker Hub will automatically trigger a new build.
+
+[Docker Hub Link](https://hub.docker.com/r/paulrmortimer/docker-terraform)
 
 ## Related Projects
 

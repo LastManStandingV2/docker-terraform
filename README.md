@@ -1,5 +1,5 @@
 # Docker Terraform
-Containerised Terraform CLI with Python3, GCP, AWS SDKs and GOSU installed.
+Containerised Terraform CLI with Python3, GCP , AWS SDKs and GOSU installed.
 
 ## Usage
 The below 2 examples are using the `terraform` user inside the container.
@@ -72,3 +72,4 @@ Docker Hub will automatically trigger a new build.
 ## Related Projects
 
 - [hashicorp/terraform](https://hub.docker.com/r/hashicorp/terraform/)
+- [gosu](https://github.com/tianon/gosu)

@@ -1,4 +1,4 @@
-FROM hashicorp/terraform:1.0.3
+FROM hashicorp/terraform:1.1.0
 
 RUN apk add --update --no-cache \
         make \
@@ -12,10 +12,6 @@ RUN apk add --update --no-cache \
         google-api-python-client \
         google-auth \
         awscli
-
-# download and install gosu
-COPY --from=gosu/assets /opt/gosu /opt/gosu
-RUN /opt/gosu/gosu.install.sh && rm -fr /opt/gosu
 
 # use custom entrypoint to always use hosts user UID and GID
 COPY entrypoint.sh /usr/local/bin/entrypoint.sh

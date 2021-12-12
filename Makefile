@@ -1,6 +1,7 @@
 .SILENT:
-TERRAFORM_VERSION = 1.0.3
-IMAGE_NAME ?= paulrmortimer/docker-terraform:$(TERRAFORM_VERSION)
+TERRAFORM_VERSION = 1.1.0
+DOCKER_PLATFORM = linux/amd64
+IMAGE_NAME ?= nstep/docker-terraform:$(TERRAFORM_VERSION)
 TAG = $(TERRAFORM_VERSION)
 
 .PHONY: build
@@ -9,8 +10,8 @@ build:
 
 .PHONY: test
 test:
-	docker run --rm -it --entrypoint="terraform" $(IMAGE_NAME) --version
-	docker run --rm -it --entrypoint="aws" $(IMAGE_NAME) --version
+	docker run --platform $(DOCKER_PLATFORM) --rm -it --entrypoint="terraform" $(IMAGE_NAME) --version
+	docker run --platform $(DOCKER_PLATFORM) --rm -it --entrypoint="aws" $(IMAGE_NAME) --version
 
 .PHONY: shell
 shell:
